@@ -1,0 +1,12 @@
+.External{
+	color: black;
+	font-size: 30px;
+}
+.Internal{
+      color: white;
+      font-size: 25px;
+    }
+    .section1{
+      background-color: red;
+      padding: 10px 0 25px 0;
+    }

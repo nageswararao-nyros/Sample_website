@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS#3</title>
+   <meta name="viewport" content="width=device-width, initial scale=1">
+  <link rel="stylesheet" type="text/css" href="External.css">
+  <style type="text/css">
+
+    body{
+      background-color:grey;
+      padding: 0;
+      margin: 0;
+    }
+    .Internal{
+      color: blue;
+      font-size: 25px;
+    }
+    .section1{
+      background-color: #61dafb;
+      padding: 10px 0 25px 0;
+    }
+
+    .section2{
+      background-color: pink;
+      padding: 10px 0 25px 0;
+      margin: 0;
+    }
+    .section2 p{
+      color: black;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    #id{
+      color: blue;
+      font-size: 25px;
+    }
+
+    .section2 .cls{
+      color: green;
+      font-size: 30px;
+    }
+
+    .section3{
+      padding: 10px 0 10px 0;
+    }
+
+    .section3 .imp{
+      color: red !important;
+    }
+
+    .section3 .cls{
+      color: white;
+      font-size: 30px;
+    }
+
+  </style>
+  
+</head>
+<body>
+
+<div class="main">
+
+  <div class="subMain">
+      <section class="section1">
+        <h1>Adding CSS</h1>
+          <ul type="square">
+            <li><h5><p style="color: red; font-size: 20px;"> This is Inline CSS</h5></li>
+            <li><h5><p class="Internal">This is Internal CSS </p></h5></li>
+            <li><h5><p class="External">This is External CSS</p></h5></li>
+          </ul>
+       </section>    
+  </div>
+
+      <section class="section2">
+        <h1>Primary DOM selectors</h1>
+          <ul type="square">
+            <li><p> This style applied through Element selector</p></li>
+            <li><p id="id"> This style applied through Id Selector</p></li>
+            <li><p class="cls">After inline Internal</p></li>
+          </ul>
+      </section>
+
+       <section class="section3">
+        <h1>Cascade Order <br>
+    ....Style priority is determined by position in site:</h1>
+          <ul type="square">
+              <li>
+                <p>  This style applied through <h1 class="imp" style="color: blue;">Using ! important</h1> !important takes the first priority to apply styles even file having inline or external css to that text...etc.</p>The !important rule is a way make sure your most crucial CSS rules are always applied. It is a way to override the general rule of cascading order. If two styles come into conflict in the same element, and one has the !important rule assigned to it, that one will be used.
+              </li>
+              <hr>
+            <li><p style="color: blue; font-size: 30px;">After the priority of</p> <p style="color: red; font-size: 30px;">!important</p><p style="color:blue; font-size: 30px;">Inline is second priority for applying styles</p></li><hr>
+            <li><p class="cls">Internal priority</p> Style can applied in style tag on head section</li><hr>
+
+            <li><p class="External"> External CSS is last priority</p></li>
+          </ul>
+      </section>
+  
+</div>
+
+</body>
+</html>
