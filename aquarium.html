@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>aquarium</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Aquarium</h1>
+	<h2>You want to know about aquarium click here</h2>
+
+	
+	<input onclick="aquariumOpen()" value="submit" type="button">
+		<script type="text/javascript">
+			
+			function aquariumOpen(){
+
+				var aquarium = {
+
+					Nemo: {
+					 type: "fish", 
+					 species: "clownfish", 
+					 length: 3.7 
+					},
+					Marlin: { 
+						type: "fish", 
+						species: "clownfish", 
+						length: 4.1 
+					},
+					Dory: { 
+						type: "fish", 
+						species: "blue tang", 
+						length: 6.2 
+					},
+					Peach: { 
+						type: "echinoderm", 
+						species: "starfish", 
+						length: 5.3 
+					},
+					"Coral Castle": { 
+						type: "environment", 
+						material: "coquina", 
+						moves: false 
+					},
+					"Dragon Statue": { 
+						type: "environment", 
+						material: "plastic", 
+						moves: false 
+					},
+
+			
+
+					addCritter : function(name,type, species, length){
+
+						this[name] = {
+
+						type : type,
+						species : species,
+						length : length
+
+						}
+					},
+
+					addToy : function(name, type, material, move){
+
+						this[name] = {
+
+						type : type,
+						material : material,
+						move : move
+						
+						}
+					}
+					
+				}
+
+					aquarium.addCritter("Neon Tetra", "fish", "blue tang", "4");
+					aquarium.addCritter("Oscar", "fish", "clownfish", "5");
+					aquarium.addCritter("Mollies", "fish", "blue tang", "3");
+					aquarium.addCritter("Siamese fighting", "fish", "Osphronemidae", "5");
+					aquarium.addCritter("Ram cichlid", "fish", "Cichlidae", "6");
+
+					aquarium.addToy("Imagitarium", "plant", "plastic",false);
+					aquarium.addToy("RockGarden", "rock", "wood", false);
+					aquarium.addToy("Penn Plax", "house", "plastic", false);
+
+
+
+					console.log(aquarium);
+
+				aquarium.takeOut = function(name) {
+                this[name].name = name;
+                var total = this[name];
+                delete this[name];
+                return total;
+           		 };
+
+	            var remove1 = aquarium.takeOut("Mollies");
+	            var remove2 = aquarium.takeOut("RockGarden");
+	            console.log(remove1);
+	            console.log(remove2);	
+				
+				var counter = 0;
+
+				for (creatures in aquarium){
+					if(aquarium[creatures].type == "fish"){
+						counter++;
+						console.log(counter);
+						
+					}
+					
+				}alert("Total Fishes in aquarium is" +" "+counter);
+
+
+			}
+
+		</script>
+
+</body></html>
